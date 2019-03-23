@@ -11,7 +11,7 @@ namespace MQReceiver
     public class Handler
     {
         public static Logger logger = LogManager.GetCurrentClassLogger();
-        private static ConcurrentDictionary<int, byte> cacheDict;
+        private static ConcurrentDictionary<int, byte> cacheDict = new ConcurrentDictionary<int, byte>();
         public static void ProceedRequestAsync(object message)
         {
             Person pers = Newtonsoft.Json.JsonConvert.DeserializeObject<Person>((string)message);
